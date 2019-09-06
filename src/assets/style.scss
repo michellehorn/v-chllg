@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+// theme colors
+$primary: gray;
+$secondary: #8234;
+$tertiary: #187372;
+// 
+// grid
+.d-flex {
+    display: flex;
+}
+
+.d-block {
+    display: block;
+}
+
+.stretch {
+    align-self: stretch;
+}
+
+.flex-start {
+    align-self: flex-start;
+}
+
+// column size
+@for $i from 1 through 12 {
+    $widthsize: 100% / 12 * $i;
+    .col-#{$i} {
+        width: $widthsize;
+        padding: 1%;
+    }
+    @media screen and (max-width: 500px) {
+        .col-#{$i} {
+            width: $widthsize;
+            padding: 3% 1%;
+        }
+    }
+}
+
+// margin && padding size
+@for $i from 1 through 5 {
+    $spc: 5% / 5 * $i;
+    .m-#{$i} {
+        margin: $spc;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .d-flex {
+        display: block;
+    }
+    .col-sm-12 {
+        text-align: center;
+        width: fit-content;
+    }
+}
+
+// animation
+@keyframes fadeIn {
+    0% {
+        opacity: 0.7;
+        box-shadow: none;
+    }
+    25% {
+        opacity: 0.6;
+        box-shadow: 1px 2px 2px 1px #d3d3d3;
+    }
+    50% {
+        opacity: 0.55;
+        box-shadow: 1px 2px 2px 4px #d3d3d3;
+    }
+    75% {
+        opacity: 0.45;
+        box-shadow: 1px 2px 2px 7px #d3d3d3;
+    }
+    100% {
+        opacity: 0.4;
+        box-shadow: 1px 2px 10px 10px #d3d3d3;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0.4;
+        box-shadow: 1px 2px 10px 10px #d3d3d3;
+    }
+    25% {
+        opacity: 0.45;
+        box-shadow: 1px 2px 2px 7px #d3d3d3;
+    }
+    50% {
+        opacity: 0.55;
+        box-shadow: 1px 2px 2px 4px #d3d3d3;
+    }
+    75% {
+        opacity: 0.6;
+        box-shadow: 1px 2px 2px 1px #d3d3d3;
+    }
+    100% {
+        opacity: 0.7;
+        box-shadow: none;
+    }
+}
+
+@keyframes upText {
+    0% {
+        top: 35%;
+    }
+    100% {
+        top: 60%;
+    }
+}
+
+@keyframes downText {
+    0% {
+        top: 60%;
+    }
+    100% {
+        top: 35%;
+    }
+}
+
+@keyframes opacityOn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opacityOff {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
